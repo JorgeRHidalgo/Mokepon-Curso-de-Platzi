@@ -1,0 +1,378 @@
+/*Importamos las fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/*Asignamos la fuente al body y el fondo*/
+body {
+  font-family: 'Poppins';
+  background-color: #041562;
+  background-image: url('../assets/mokepon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+/*Estilo de id seleccionar-mascota*/
+#seleccionar-mascota {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Estilo a la clase principal de titulos*/
+.principal {
+  font-family: 'Pokemon Hollow';
+  color: rgb(255, 255, 15);
+  display: flex;
+  justify-content: top;
+  align-items: top;
+}
+
+.hero {
+  font-family: 'Pokemon Hollow';
+  color: rgb(255, 255, 15);
+  display: flex;
+  justify-content: top;
+  align-items: top;
+}
+
+.combate {
+  font-family: 'Pokemon Hollow';
+  color: rgb(255, 255, 15);
+  display: flex;
+  justify-content: top;
+  align-items: top;
+}
+
+.titulo {
+  width: 100%;
+  height: 18.625rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 7.5rem;
+  font-weight: bold;
+  margin: 0%;
+}
+
+/*Estilo a la Clase subtitulo*/
+.subtitulo {
+  padding: 0rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#subtitulo-ataques {
+  padding: 0rem;
+  color: white;
+  font-size: 1.5rem;
+}
+/*Animacion de las tarjetas de Mascotas*/
+@keyframes float {
+  0% {
+    box-shadow: 0 0.3125rem 0.9375rem 0rem rgba(0, 0, 0, 0.6);
+    transform: translatey(0rem);
+  }
+  50% {
+    box-shadow: 0 0.3125rem 0.9375rem 0rem rgba(0, 0, 0, 0.2);
+    transform: translatey(-1.25rem);
+  }
+  100% {
+    box-shadow: 0 0.3125rem 0.9375rem 0rem rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+/*Estilos de las Clase tarjetas y tarjetas de mokepon*/
+.tarjetas,
+.tarjetas-ataques {
+  display: flex;
+  gap: 0.625rem;
+}
+
+/*Estilo de la clase tarjeta-de-mokepon*/
+.tarjeta-de-mokepon {
+  width: 13.125rem;
+  height: 7.5rem;
+  padding: 0.625rem;
+  background-color: #11468f;
+  box-sizing: border-box;
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 0.125rem solid rgb(255, 255, 255);
+  transform: translatey(0px);
+  animation: float 1s ease-in-out infinite;
+}
+
+/*Tamaño de la tarjeta-de-mokepon*/
+.tarjeta-de-mokepon img {
+  width: 60%;
+}
+
+/*Cuando el puntero del mouse pasa por encima de la tarjeta-de-mokepon*/
+.tarjeta-de-mokepon:hover {
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 3.75rem;
+  cursor: pointer;
+  border-color: yellowgreen;
+}
+
+/*Estilo del boton de Seleccionar*/
+#boton-mascota {
+  width: 9.375rem;
+  height: 2.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #11468f;
+  color: rgb(255, 255, 255);
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 0.625rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 1.875rem;
+  transition: 0.4s;
+}
+
+.btnMascota {
+  padding: 0.9375rem 3.125rem;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+  z-index: 100;
+  transition: 0.4s ease-in;
+}
+
+/*Cuando el puntero del mouse pasa por encima del boton Seleccionar*/
+.btnMascota:hover {
+  color: rgb(0, 0, 0);
+}
+
+/*Animacion del boton Seleccionar*/
+#boton-mascota::after {
+  content: '';
+  width: 9.375rem;
+  height: 2.875rem;
+  border-radius: 1.5625rem;
+  position: absolute;
+  top: 0rem;
+  left: -6.25rem;
+  opacity: 0;
+  transition: 0.5s ease-in;
+}
+#boton-mascota:hover::after {
+  opacity: 1;
+  left: 0rem;
+  background-color: yellowgreen;
+}
+
+#boton-mascota:hover {
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 5rem;
+  cursor: pointer;
+  border-color: yellowgreen;
+}
+
+/*Ocultamos el Radio Button*/
+input {
+  display: none;
+}
+
+/*Estilo de la tarjeta de mokepones cuando seleccionamos la mascota*/
+input:checked + label {
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3.75rem;
+  border-color: rgb(3, 123, 9);
+  background-color: yellowgreen;
+  color: black;
+}
+
+/*Estilo de la botones de ataque*/
+#seleccionar-ataque {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-de-ataque {
+  padding: 0%;
+  width: 5rem;
+  height: 3.125rem;
+  background-color: #11468f;
+  color: whitesmoke;
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 0.625rem;
+  margin-top: 0.3125rem;
+  transition: 0.4s;
+}
+
+/*Cuando el puntero del mouse pasa por encima del boton de ataque*/
+.boton-de-ataque:hover {
+  background-color: #11468f;
+  color: yellowgreen;
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 5rem;
+  cursor: pointer;
+  border-color: yellowgreen;
+}
+
+/*Estilo de los mensajes*/
+#mensajes {
+  display: flex;
+  justify-content: center;
+  width: 20rem;
+  background-color: #5792e5;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 1.25rem;
+  border-radius: 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  color: whitesmoke;
+}
+
+/*Estilo del Boton Reiniciar*/
+#boton-reiniciar {
+  width: 9.375rem;
+  height: 2.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #11468f;
+  color: whitesmoke;
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 0.625rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 1.875rem;
+  transition: 0.4s;
+}
+
+/*Animacion del boton Reiniciar cuando el puntero del mouse pasa sobre el*/
+.btnReiniciar {
+  padding: 0.9375rem 3.125rem;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+  z-index: 100;
+  transition: 0.4s ease-in;
+}
+
+.btnReiniciar:hover {
+  color: rgb(0, 0, 0);
+}
+
+#boton-reiniciar::after {
+  content: '';
+  width: 9.375rem;
+  height: 2.875rem;
+  border-radius: 1.5625rem;
+  position: absolute;
+  top: 00rem;
+  left: -5.25rem;
+  opacity: 0;
+  transition: 0.5s ease-in;
+}
+#boton-reiniciar:hover::after {
+  opacity: 1;
+  left: 0rem;
+  background-color: yellowgreen;
+}
+
+#boton-reiniciar:hover {
+  color: rgb(0, 0, 0);
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 5rem;
+  cursor: pointer;
+  border-color: yellowgreen;
+}
+
+/*Estilo del boton de Ataque*/
+.ataques {
+  display: grid;
+  grid-template-columns: 12.5rem 12.5rem;
+  width: 20rem;
+  padding: 1.25rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+  background-color: #5792e5;
+  border-radius: 1.25rem;
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+
+/*Estilo del los menasejes de ataque*/
+#vidas-jugador,
+#vidas-enemigo {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.ataques-jugador,
+.ataques-enemigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Estilo del mapa*/
+#ver-mapa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Estilo de los botones que mueven las mascotas por el mapa*/
+#ver-mapa button {
+  padding: 0%;
+  width: 5rem;
+  height: 2.875rem;
+  background-color: #11468f;
+  color: whitesmoke;
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 0.625rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 0.3125rem;
+  transition: 0.4s;
+}
+
+/*Cuando el puntero de los botones que mueven las mascotas*/
+#ver-mapa button:hover {
+  background-color: #5792e5;
+  border: 0.125rem solid rgb(255, 255, 255);
+  border-radius: 5rem;
+  cursor: pointer;
+  border-color: yellowgreen;
+}
+
+/* Media Queries - Hace que sea compatible para tamaños de pantallas*/
+@media (max-width: 680px) {
+  .tarjetas,
+  .tarjetas-ataques {
+    flex-direction: column;
+  }
+  .titulo {
+    height: 10rem;
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 300px) {
+  #ver-mapa div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
