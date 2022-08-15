@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JorgeRHidalgo/Mokepon---Curso-de-Platzi/issues"
   },
-  "homepage": "https://github.com/JorgeRHidalgo/Mokepon---Curso-de-Platzi#readme"
+  "homepage": "https://github.com/JorgeRHidalgo/Mokepon---Curso-de-Platzi#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
