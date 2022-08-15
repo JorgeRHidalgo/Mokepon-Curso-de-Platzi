@@ -187,10 +187,9 @@ function iniciarJuego() {
 function unirseAlJuego() {
   fetch('http://localhost:8080/unirse').then(function (res) {
     if (res.ok) {
-      res.
-        text().then(function (respuesta) {
-          console.log(respuesta);
-        });
+      res.text().then(function (respuesta) {
+        console.log(respuesta);
+      });
     }
   });
 }
@@ -211,6 +210,7 @@ function seleccionarMascotaJugador() {
     alert('Selecciona una mascota');
     jugar = 0;
   }
+
   //Condicion para jugar... solo se cumple si el jugador eligio mascota
   if (jugar == 1) {
     sectionSeleccionarMascota.style.display = 'none';
