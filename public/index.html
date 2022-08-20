@@ -27,30 +27,38 @@
       <h2 class="subtitulo">Rocorre el mapa y elige tu oponente</h2>
       <canvas id="mapa"></canvas>
       <button
-        onmouseup="detenerMovimiento()"
         onmousedown="moverArriba()"
+        ontouchstart="moverArriba()"
+        onmouseup="detenerMovimiento()"
+        ontouchend="detenerMovimiento()"
         id="botonMoverArriba"
       >
         Arriba
       </button>
       <div>
         <button
-          onmouseup="detenerMovimiento()"
           onmousedown="moverIzquierda()"
+          ontouchstart="moverIzquierda()"
+          onmouseup="detenerMovimiento()"
+          ontouchend="detenerMovimiento()"
           id="botonMoverIzquierda"
         >
           Izquierda
         </button>
         <button
-          onmouseup="detenerMovimiento()"
           onmousedown="moverAbajo()"
+          ontouchstart="moverAbajo()"
+          onmouseup="detenerMovimiento()"
+          ontouchend="detenerMovimiento()"
           id="botonMoverAbajo"
         >
           Abajo
         </button>
         <button
-          onmouseup="detenerMovimiento()"
           onmousedown="moverDerecha()"
+          ontouchstart="moverDerecha()"
+          onmouseup="detenerMovimiento()"
+          ontouchend="detenerMovimiento()"
           id="botonMoverDerecha"
         >
           Derecha
