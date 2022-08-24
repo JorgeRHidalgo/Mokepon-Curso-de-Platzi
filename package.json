@@ -2,6 +2,10 @@
   "name": "mokepon",
   "version": "1.0.0",
   "description": "",
+  "rootPath": "d:\\Programacion\\Escuelas y Cursos\\Platzi Cursos\\Nuevo Curso de Programacion\\mokepon",
+  "paths": [],
+  "tags": [],
+  "enabled": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
