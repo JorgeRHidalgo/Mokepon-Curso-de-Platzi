@@ -173,7 +173,6 @@ function unirseAlJuego() {
   fetch("http://192.168.1.4:8080/unirse").then((res) => {
     if (res.ok) {
       res.text().then((respuesta) => {
-        console.log(respuesta);
         jugadorId = respuesta;
       });
     }
@@ -245,7 +244,6 @@ function secuenciaAtaque() {
     boton.addEventListener("click", (e) => {
       if (e.target.textContent === "🔥") {
         ataqueJugador.push("FUEGO");
-        console.log(ataqueJugador);
         boton.style.background = "#041562";
         boton.style.border = "2px solid rgb(255, 255, 255)";
         boton.style.borderRadius = "80px";
@@ -254,7 +252,6 @@ function secuenciaAtaque() {
         boton.style.cursor = "not-allowed";
       } else if (e.target.textContent === "💧") {
         ataqueJugador.push("AGUA");
-        console.log(ataqueJugador);
         boton.style.background = "#041562";
         boton.style.border = "2px solid rgb(255, 255, 255)";
         boton.style.borderRadius = "80px";
@@ -263,7 +260,6 @@ function secuenciaAtaque() {
         boton.style.cursor = "not-allowed";
       } else {
         ataqueJugador.push("TIERRA");
-        console.log(ataqueJugador);
         boton.style.background = "#041562";
         boton.style.border = "2px solid rgb(255, 255, 255)";
         boton.style.borderRadius = "80px";
@@ -280,8 +276,6 @@ function secuenciaAtaque() {
 }
 
 function enviarAtaques() {
-  console.log("Enviar ataques", ataqueJugador);
-
   fetch(`http://192.168.1.4:8080/mokepon/${jugadorId}/ataques`, {
     method: "post",
     headers: {
@@ -296,8 +290,6 @@ function enviarAtaques() {
 }
 
 function obtenerAtaques() {
-  console.log("OBTENER ATAQUES");
-
   fetch(`http://192.168.1.4:8080/mokepon/${enemigoId}/ataques`).then(function (
     res
   ) {
@@ -315,6 +307,7 @@ function obtenerAtaques() {
 function seleccionarMascotaEnemigo(enemigo) {
   spanMascotaEnemigo.innerHTML = enemigo.nombre;
   ataquesMokeponEnemigo = enemigo.ataques;
+  /*console.log*/
   secuenciaAtaque();
 }
 
@@ -346,7 +339,6 @@ function indexAmbosOponente(jugador, enemigo) {
 
 function combate() {
   clearInterval(intervalo);
-  console.log("COMBATE");
 
   for (let index = 0; index < ataqueJugador.length; index++) {
     if (ataqueJugador[index] === ataqueEnemigo[index]) {
@@ -456,8 +448,6 @@ function enviarPosicion(x, y) {
     if (res.ok) {
       res.json().then(function ({ enemigos }) {
         mokeponesEnemigos = enemigos.map(function (enemigo) {
-          console.log({ enemigo });
-
           let mokeponEnemigo = null;
           const mokeponNombre = enemigo.mokepon.nombre || "";
 
@@ -579,7 +569,6 @@ function sePresionoUnaTecla(event) {
 
 function iniciarMapa() {
   mascotaJugadorObjeto = obtenerObjetoMascota(mascotaJugador);
-  console.log(mascotaJugadorObjeto, mascotaJugador);
   intervalo = setInterval(pintarCanvas, 50);
 
   window.addEventListener("keydown", sePresionoUnaTecla);
@@ -617,7 +606,6 @@ function revisarColision(enemigo) {
 
   detenerMovimiento();
   clearInterval(intervalo);
-  console.log("Se detecto una colision");
 
   enemigoId = enemigo.id;
   sectionSeleccionarAtaque.style.display = "flex";
