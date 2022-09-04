@@ -307,7 +307,6 @@ function obtenerAtaques() {
 function seleccionarMascotaEnemigo(enemigo) {
   spanMascotaEnemigo.innerHTML = enemigo.nombre;
   ataquesMokeponEnemigo = enemigo.ataques;
-  /*console.log*/
   secuenciaAtaque();
 }
 
